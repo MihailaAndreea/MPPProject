@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<app-production-list></app-production-list>
+<div class="right">
+  <form #idForm="ngForm">
+  <div class="inner"><button [disabled] = "notANumber(idForm.value.id) !== null || idForm.value.id === '' " (click)="gotoFilterByChocoID(idForm.value.id)">Filter By Choco Id</button></div>
+  <div class="inner"><button (click)="goToSort()">Sort by ChocolateId</button></div>
+  <div *ngIf="idForm.value.id == '' || notANumber(idForm.value.id) !== null">
+    Not a valid input!
+  </div>
+  <div *ngIf="idForm.value.id != '' && notANumber(idForm.value.id) == null">
+    Valid input!
+  </div>
+  <div class="search">
+    <label for="id">ID:</label>
+    <input placeholder = "Type an ID" type="text" id="id"
+    required
+    ngModel name="id">
+    Search!
+  </div>
+  </form>
+</div>
+
+

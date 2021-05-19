@@ -1,0 +1,38 @@
+button{
+  background-color: #e9b95a;
+  width: 130px;
+  height: 60px;
+  color: black;
+  outline: none;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.search{
+  display: inline;
+}
+label {
+  color: black;
+  font-weight: bold;
+}
+input {
+  font-size: 1em;
+  padding: .5rem;
+  color: white;
+  background-color: #303030;
+}
+.left{
+  float: left;
+}
+.right{
+  margin-top: 51px;
+  float: left;
+}
+.inner{
+  display: block;
+  margin: 10px;
+}
+button:disabled{
+  background-color: #435960;
+}

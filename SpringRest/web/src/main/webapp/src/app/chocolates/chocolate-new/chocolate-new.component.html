@@ -1,0 +1,55 @@
+<h1>New Chocolate</h1>
+<form (ngSubmit)="onSubmit()" #chocolateForm="ngForm">
+  <div class="form-group">
+    <label for="name">Name:
+      <input type="text" id = "name"
+             class="form-group"
+             required="required"
+             ngModel name ="name"
+      />
+    </label>
+  </div>
+    <div class="form-group">
+      <label for="ingredients">Ingredients:
+        <input id="ingredients"
+               class="form-group"
+               required="required"
+               ngModel name ="ingredients"
+        /></label>
+    </div>
+  <div class="form-group">
+    <label for="weight">Weight:
+      <input
+              class="form-group"
+              type="text"
+             id="weight"
+             required="required"
+
+             ngModel name="weight"
+      />
+    </label>
+  </div>
+  <div class="form-group">
+    <label for="price">Price:
+      <input id="price"
+             class="form-group"
+             required="required"
+             ngModel name ="price"
+      />
+    </label>
+  </div>
+  <button class="btn btn-success"  type="submit" [disabled]="!chocolateForm.form.valid">Submit</button>
+</form>
+<div *ngIf="chocolateForm.value.price=='' ||chocolateForm.value.weight=='' ||notANumber(chocolateForm.value.price) !== null || notANumber(chocolateForm.value.weight) !== null && submitted == false">
+  Invalid input!
+</div>
+<div *ngIf="chocolateForm.value.price !='' && chocolateForm.value.weight!= '' && notANumber(chocolateForm.value.price) == null && notANumber(chocolateForm.value.weight) == null">
+  Valid input!
+  <button class="btn btn-success" (click)="saveChocolate()">Save</button>
+</div>
+<div *ngIf="submitted">
+  <p>Name: {{model.name}}</p>
+  <p>Ingredients: {{model.ingredients}}</p>
+  <p>Weight: {{model.weight}}</p>
+  <p>Price: {{model.price}}</p>
+</div>

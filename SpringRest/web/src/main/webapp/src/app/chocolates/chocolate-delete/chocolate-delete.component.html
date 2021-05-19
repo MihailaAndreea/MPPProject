@@ -1,0 +1,21 @@
+<div><h1>Hi</h1></div>
+<div *ngIf="chocolate">
+  <h2>Chocolate {{chocolate.id}} details</h2>
+  <div>
+    <label>ID: </label> {{chocolate.id}}
+  </div>
+  <div>
+    <label>Name: </label> {{chocolate.name}}
+  </div>
+  <div>
+    <label>Ingredients: </label> {{chocolate.ingredients}}
+  </div>
+  <div>
+    <label>Weight: </label> {{chocolate.weight}}
+  </div>
+  <div>
+    <label>Price: </label> {{chocolate.price}}
+  </div>
+  <button (click)="goBack()">Back</button>
+  <button (click)="delete()">Delete</button>
+</div>

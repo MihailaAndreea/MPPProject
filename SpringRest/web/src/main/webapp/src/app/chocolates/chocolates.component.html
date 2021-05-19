@@ -1,0 +1,26 @@
+<!--<p>disciplines works!</p>-->
+<div class="left">
+<app-chocolate-list></app-chocolate-list>
+</div>
+<div class="right">
+  <form #idForm="ngForm">
+  <div class="inner"><button (click)="gotoAdd()">New Chocolate</button></div>
+  <div class="inner"><button [disabled] ="notANumber(idForm.value.id) !== null || idForm.value.id === ''" (click)="gotoDelete(idForm.value.id)">Delete Chocolate</button></div>
+  <div class="inner"><button [disabled] ="notANumber(idForm.value.id) !== null || idForm.value.id === ''" (click)="gotoUpdate(idForm.value.id)">Update Chocolate</button></div>
+  <div *ngIf="idForm.value.id == '' || notANumber(idForm.value.id) !== null">
+    Not a valid input!
+  </div>
+  <div *ngIf="idForm.value.id != '' && notANumber(idForm.value.id) == null">
+    Valid input!
+  </div>
+  <div class="search">
+    <label for="id"></label>
+      ID:
+      <input placeholder = "Type an ID" type="text" id="id"
+             required="required"
+             ngModel name ="id"/>
+    Search!
+  </div>
+  </form>
+</div>
+

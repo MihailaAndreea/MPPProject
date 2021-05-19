@@ -1,0 +1,17 @@
+<h2>Chocolates</h2>
+<table class="styled-table">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Ingredients</th>
+    <th>Weight</th>
+    <th>Price</th>
+  </tr>
+  <tr *ngFor="let chocolate of chocolates">
+    <td>{{chocolate.id}}</td>
+    <td> {{chocolate.name}} </td>
+    <td> {{chocolate.ingredients}} </td>
+    <td> {{chocolate.weight}} </td>
+    <td> {{chocolate.price}} </td>
+  </tr>
+</table>

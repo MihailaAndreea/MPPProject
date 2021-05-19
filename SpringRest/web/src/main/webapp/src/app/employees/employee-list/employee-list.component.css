@@ -1,0 +1,137 @@
+.employees {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+}
+
+.container{
+  position: center;
+  left: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.left{
+  display: inline-block;
+  float: left;
+}
+
+.right{
+  display: inline-block;
+  float: left;
+}
+
+.employees li {
+  counter-increment: index;
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  box-sizing: border-box;
+  background-color: coral;
+}
+
+.employees li::before {
+  content: counters(index, ".", decimal-leading-zero);
+  font-size: 1.5rem;
+  text-align: right;
+  font-weight: bold;
+  min-width: 50px;
+  padding-right: 12px;
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+  align-self: flex-start;
+  background-color: black;
+  background-attachment: fixed;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.employees ol{
+  counter-reset: index;
+  padding: 0;
+  max-width: 300px;
+}
+
+.employees li.selected:hover {
+  background-color: #BBD8DC !important;
+  color: white;
+}
+.employees li:hover {
+  color: #607D8B;
+  background-color: #DDD;
+
+}
+
+p{
+  color: black;
+  font-size: 15px;
+}
+
+.employees li + li {
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.employees .text {
+  position: relative;
+  top: -3px;
+}
+.employees .badge {
+  display: inline-block;
+  font-size: small;
+  color: #ffffff;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #607D8B;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
+button.delete {
+  float:right;
+  margin-top: 2px;
+  margin-right: .8em;
+  background-color: gray !important;
+  color:white;
+}
+
+
+button{
+  background-color: #e9b95a;
+  width: 60px;
+  height: 40px;
+  color: black;
+  outline: none;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.search{
+  display: inline;
+}
+label {
+  color: black;
+  font-weight: bold;
+}
+input {
+  font-size: 1em;
+  padding: .5rem;
+  color: white;
+  background-color: #303030;
+}
+.left{
+  float: left;
+}
+.right{
+  margin-top: 51px;
+  float: left;
+}
+.inner{
+  display: block;
+  margin: 10px;
+}
+

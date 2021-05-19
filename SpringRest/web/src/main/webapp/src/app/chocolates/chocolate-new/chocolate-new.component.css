@@ -1,0 +1,11 @@
+button {
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  background-color: #e9b269; /* Green */
+  color: black;
+}
+button:disabled{
+  background-color: grey;
+}

@@ -1,0 +1,17 @@
+<h2>  &nbsp;&nbsp;Employees</h2>
+<div class="container">
+  <div class="left">
+    <ol class="employees">
+      <li *ngFor="let employee of employeesFiltered">
+        Employee with name:{{employee.name}}
+      </li>
+    </ol>
+  </div>
+  <form>
+  <label for="inp"></label>
+  <input placeholder="Type the name" id="inp" class="form-control" required [(ngModel)]="input" name="idk">
+  <button type="button" class="btn btn-success" (click)="filter()">Filter!</button>
+    <button type="button" class="btn btn-success" (click)="sort()">Sort!</button>
+  </form>
+</div>
+

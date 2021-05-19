@@ -1,0 +1,22 @@
+<h2>  &nbsp;&nbsp;ProductionLots</h2>
+<div class="container">
+  <div class="left">
+    <ol class="productionLots">
+      <li *ngFor="let productionLot of productionLots"
+          [class.selected]="productionLot === selectedProductionLot"
+          (click)="onSelect(productionLot)">
+        Production lot with ChocoId:{{productionLot.chocolateID}}
+      </li>
+    </ol>
+  </div>
+  <div class="right">
+    Selected:
+    <div *ngIf="selectedProductionLot">
+      {{selectedProductionLot.id}}
+      <button (click)="gotoDetail()">View Details</button>
+    </div>
+  </div>
+</div>
+<button (click)="goBack()">Back</button>
+
+

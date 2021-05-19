@@ -1,0 +1,21 @@
+<div *ngIf="productionLot">
+  <h2>ProductionLot {{productionLot.id}} details</h2>
+  <div>
+    <label>ChocolateID: </label> {{productionLot.chocolateID}}
+    <input [(ngModel)]="productionLot.chocolateID" placeholder="ChocolateID">
+  </div>
+  <div>
+    <label>Quantity: </label> {{productionLot.quantity}}
+    <input [(ngModel)]="productionLot.quantity" placeholder="quantity">
+  </div>
+  <div>
+    <label>ProductionDate: </label> {{productionLot.productionDate}}
+    <input [(ngModel)]="productionLot.productionDate" placeholder="productionDate">
+  </div>
+  <div>
+    <label>ExpirationDate: </label> {{productionLot.expirationDate}}
+    <input [(ngModel)]="productionLot.expirationDate" placeholder="expirationDate">
+  </div>
+  <button (click)="goBack()">Back</button>
+  <button (click)="save()">Save</button>
+</div>

@@ -1,0 +1,15 @@
+ext {
+    springVersion = '5.0.3.RELEASE'
+
+    jacksonDatabindVersion = '2.9.4'
+    javaxServeletApiVersion = '4.0.1'
+}
+
+dependencies {
+    compile project(':web')
+
+    compile group: 'org.springframework', name: 'spring-web', version: "$springVersion"
+
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: "$jacksonDatabindVersion"
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: "$jacksonDatabindVersion"
+}

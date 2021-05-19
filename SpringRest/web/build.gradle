@@ -1,0 +1,55 @@
+plugins {
+    id 'war'
+}
+
+war {
+    zip64 true
+}
+
+ext {
+    springVersion = '5.0.3.RELEASE'
+    postgresqlVersion = '42.2.1'
+    dbcpVersion = '2.2.0'
+
+    slf4jVersion = '1.7.25'
+    log4jVersion = '2.10.0'
+
+    springDataVersion = '2.0.3.RELEASE'
+    hibernateVersion = '5.2.6.Final'
+    caffeineVersion = '2.6.1'
+    hikariVersion = '2.7.7'
+    jaxbapiVersion = '2.3.0'
+
+    jacksonDatabindVersion = '2.9.4'
+    javaxServeletApiVersion = '4.0.1'
+
+    lombokVersion = '1.18.4'
+}
+
+dependencies {
+    compile project(':core')
+
+    compile "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.8.6"
+    compile group: 'org.springframework', name: 'spring-context', version: "$springVersion"
+    compile group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
+
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: "$jacksonDatabindVersion"
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: "$jacksonDatabindVersion"
+
+//    compile group: 'javax.servlet', name: 'javax.servlet-api', version: "$javaxServeletApiVersion"
+    // https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
+//    compile group: 'javax.servlet', name: 'javax.servlet-api', version:"$javaxServeletApiVersion"
+
+    //logging
+    compile group: 'org.slf4j', name: 'slf4j-api', version: "$slf4jVersion"
+    testCompile group: 'org.slf4j', name: 'slf4j-simple', version: "$slf4jVersion"
+
+    compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: "$log4jVersion"
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: "$log4jVersion"
+    compile group: 'org.apache.logging.log4j', name: 'log4j-1.2-api', version: "$log4jVersion"
+
+    //lombok
+    compileOnly 'org.projectlombok:lombok:1.18.16'
+    annotationProcessor 'org.projectlombok:lombok:1.18.16'
+
+}

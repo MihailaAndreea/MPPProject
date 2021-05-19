@@ -1,0 +1,60 @@
+<div><h1>Hi</h1></div>
+<div *ngIf="chocolate">
+<!--  <h2>Chocolate {{chocolate.id}} details</h2>-->
+<!--  <div>-->
+<!--    <label>ID: </label> {{chocolate.id}}-->
+<!--    <input [(ngModel)]="chocolate.id" placeholder="ChocolateID">-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <label>Name: </label> {{chocolate.name}}-->
+<!--    <input [(ngModel)]="chocolate.name" placeholder="name">-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <label>Ingredients: </label> {{chocolate.ingredients}}-->
+<!--    <input [(ngModel)]="chocolate.ingredients" placeholder="ingredients">-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <label>Weight: </label> {{chocolate.weight}}-->
+<!--    <input [(ngModel)]="chocolate.weight" placeholder="weight">-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <label>Price: </label> {{chocolate.price}}-->
+<!--    <input [(ngModel)]="chocolate.price" placeholder="price">-->
+<!--  </div>-->
+<!--  <button (click)="goBack()">Back</button>-->
+<!--  <button (click)="save()">Save</button>-->
+  <form [formGroup]="chocolateForm" (ngSubmit)="save()">
+    <div class="form-group">
+      <label for="name">Name:</label> {{chocolate.name}}
+      <input type="text" class="form-control" id="name"
+      formControlName="name" required>
+    </div>
+    <div class="form-group">
+      <label for="ingredients">Ingredients:</label> {{chocolate.ingredients}}
+      <input type="text" class="form-control" id="ingredients"
+             formControlName="ingredients" required>
+    </div>
+    <div class="form-group">
+      <label for="weight">Weight:</label> {{chocolate.weight}}
+      <input type="text" class="form-control" id="weight"
+             formControlName="weight" required>
+    </div>
+    <div class="form-group">
+      <label for="price">Price:</label> {{chocolate.price}}
+      <input type="text" class="form-control" id="price"
+             formControlName="price" required>
+    </div>
+      <button (click)="goBack()">Back</button>
+    <div *ngIf="chocolateForm.status == 'VALID' && notANumber(chocolateForm.value.weight)==null && notANumber(chocolateForm.value.price)==null">
+      <button (click)="save()">Save</button>
+    </div>
+    <div *ngIf="chocolateForm.status == 'VALID' && notANumber(chocolateForm.value.weight)!==null || notANumber(chocolateForm.value.price)!==null">
+      Invalid input!
+      weight: {{chocolateForm.value.weight}}
+      price: {{chocolateForm.value.price}}
+    </div>
+  </form>
+</div>
+<div *ngIf="chocolate==undefined">
+  Not existent!
+</div>
